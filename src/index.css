@@ -82,11 +82,11 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-a:focus {
+.pin:focus {
   outline: thin dotted;
 }
-a:hover,
-a:active {
+.pin:hover,
+.pin:active {
   outline: 0;
 }
 article,
@@ -672,7 +672,7 @@ input:-webkit-autofill {
 .icon-nut:before {
   content: "\e63f";
 }
-.icon-camera:before {
+.icon-camer.pin:before {
   content: "\e640";
 }
 .icon-eye:before {
@@ -819,19 +819,19 @@ input:-webkit-autofill {
 .icon-meteor:before {
   content: "\e670";
 }
-a {
+.pin {
   transition: all 200ms ease-in;
   color: #5db9ff;
   cursor: pointer;
   text-decoration: none;
 }
-a:hover {
+.pin:hover {
   color: #239da8;
 }
-a:active {
+.pin:active {
   color: #555;
 }
-a:focus {
+.pin:focus {
   outline: none;
 }
 .list-heading {
@@ -879,16 +879,16 @@ a:focus {
   transition: all 200ms ease-in;
   padding-right: 20px;
 }
-.list-item .actions a {
+.list-item .actions .pin {
   display: inline-block;
   vertical-align: top;
   text-align: center;
   color: #eee;
 }
-.list-item .actions a:hover {
+/* .list-item .actions .pin:hover {
   color: #2cc5d2;
-}
-.list-item .actions a:active {
+} */
+.list-item .actions .pin:active {
   color: #555;
 }
 .list-item .actions [class^="icon-"] {
