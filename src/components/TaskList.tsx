@@ -1,8 +1,6 @@
 import React from "react";
-
 import Task, { EventProps } from "./Task";
-
-import { useTasksState, useTasksMutators } from "../stores/taskStore";
+import { useTasksState } from "../stores/taskStore";
 
 type Props = {
   loading: boolean;
@@ -18,23 +16,11 @@ const LoadingRow = (
 );
 
 const TaskList: React.FC<Props> = (props) => {
-  const [tasks, setTasks] = [useTasksState(), useTasksMutators()];
-  const events = {
-    onPinTask: props.onPinTask,
-    onArchiveTask: props.onArchiveTask,
-  };
+  // recoilで管理されたtasksState(※実装は隠蔽)
+  const tasks = useTasksState();
 
   if (props.loading) {
-    return (
-      <div className="list-items">
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-      </div>
-    );
+    return <div className="list-items">{new Array(6).fill(null).map(() => LoadingRow)}</div>;
   }
 
   if (tasks.length === 0) {
@@ -55,7 +41,14 @@ const TaskList: React.FC<Props> = (props) => {
         ...tasks.filter((t) => t.state === "TASK_PINNED"),
         ...tasks.filter((t) => t.state !== "TASK_PINNED"),
       ].map((task) => (
-        <Task key={task.id} task={task} {...events} />
+        <Task
+          key={task.id}
+          task={task}
+          {...{
+            onPinTask: props.onPinTask,
+            onArchiveTask: props.onArchiveTask,
+          }}
+        />
       ))}
     </div>
   );

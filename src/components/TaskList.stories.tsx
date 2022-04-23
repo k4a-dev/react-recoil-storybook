@@ -1,6 +1,6 @@
 // ------------------ Import NPM Modules ------------------ //
 import React, { ComponentProps } from "react";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
 import { CSFType } from "../types/storybook";
 import { RecoilRoot } from "recoil";
 
