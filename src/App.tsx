@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TaskType } from "./components/Task";
 import TaskList from "./components/TaskList";
-import { useTasksMutators, useTasksState, useTaskId } from "./lib/taskStore";
+import { useTasksMutators, useTasksState, useTaskId } from "./stores/taskStore";
 
 // ------------------ Modules ------------------ //
 const toggleTaskPin = (id: number, tasks: TaskType[]) => {

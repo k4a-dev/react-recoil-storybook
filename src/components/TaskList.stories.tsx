@@ -7,7 +7,7 @@ import { RecoilRoot } from "recoil";
 // ------------------ Import Modules ------------------ //
 import TaskList from "./TaskList";
 import { TaskType } from "./Task";
-import { useTasksMutators } from "../lib/taskStore";
+import { useTasksMutators } from "../stores/taskStore";
 
 // ------------------ Recoil Mock------------------ //
 

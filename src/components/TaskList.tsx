@@ -2,7 +2,7 @@ import React from "react";
 
 import Task, { EventProps } from "./Task";
 
-import { useTasksState, useTasksMutators } from "../lib/taskStore";
+import { useTasksState, useTasksMutators } from "../stores/taskStore";
 
 type Props = {
   loading: boolean;
